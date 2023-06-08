@@ -1,0 +1,392 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --accent: #283a2c;
+  --white: #fff;
+  --black: #000;
+  --red: #c82736;
+  --blue: #3399ff;
+}
+
+:selection {
+  background: var(--accent);
+  color: #fff;
+}
+
+html {
+  font-size: 12px;
+}
+
+.clearfix {
+  clear: both;
+  display: block;
+  width: 100%;
+}
+
+body {
+  background: var(--accent);
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  position: relative;
+  font-weight: normal;
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+  -khtml-font-smoothing: antialiased;
+  -apple-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  -ms-scroll-chaining: none;
+  overscroll-behavior: none;
+  font-variant-numeric: lining-nums;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.uppercase {
+  text-transform: uppercase;
+  font-family: "Lato", sans-serif;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 6rem;
+}
+
+h2 {
+  font-size: 4rem;
+}
+
+h3 {
+  font-size: 2.3rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+p {
+  font-family: "Lato";
+  font-size: 1rem;
+}
+
+.full_screen {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.bg-accent {
+  background: var(--accent);
+}
+
+.black-bg {
+  background: var(--black);
+}
+
+.center-content {
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.center-content h1, .center-content h2, .center-content h3, .center-content h4, .center-content h5 {
+  color: #fff;
+}
+.center-content h4 {
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  max-width: 100%;
+  height: auto;
+  z-index: 1;
+  object-fit: cover;
+}
+
+.section-content {
+  width: 83.33333%;
+  max-width: 75rem;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  position: relative;
+  z-index: 3;
+}
+.section-content h4 {
+  margin-bottom: 0;
+}
+.section-content p {
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: fadeIn 1s ease;
+  z-index: 2;
+}
+.hero-overlay::after {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  height: 4rem;
+  background: linear-gradient(180deg, transparent 0%, #000 100%);
+  opacity: 0.7;
+  content: "";
+}
+.hero-overlay::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, #000 0%, transparent 100%);
+  opacity: 0.8;
+  content: "";
+}
+
+.scroll-tip {
+  position: absolute;
+  bottom: 1rem;
+  z-index: 3;
+  margin: 0 auto;
+  pointer-events: none;
+  width: 100%;
+}
+.scroll-tip .scroll-label {
+  text-transform: uppercase;
+  margin: 0 auto;
+  max-width: 6rem;
+  color: #fff;
+  width: 5rem;
+  line-height: 1.1;
+  font-size: 1.1rem;
+}
+
+.scroll-circle-1 {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 2px dotted #fff;
+  position: absolute;
+  top: -45px;
+  left: -30px;
+  opacity: 0.8;
+  z-index: 3;
+  animation: spin_rotate 5s linear alternate infinite;
+}
+
+@keyframes spin_rotate {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  100% {
+    transform: rotate(360deg) scale(1.2);
+  }
+}
+/*2 section*/
+.second-section, .third-section {
+  position: relative;
+  z-index: 2;
+}
+
+.second-section {
+  min-height: 1200px;
+}
+
+.section-title {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+.section-title h4 {
+  margin-bottom: 0;
+  color: #fff;
+}
+.section-title h2 {
+  color: #fff;
+}
+
+/* enter animations for titles*/
+.animate-1 {
+  opacity: 0;
+}
+
+.animate-2 {
+  opacity: 0;
+  transform: scale(1.08);
+}
+
+.animate-3 {
+  opacity: 1;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.fadeIn {
+  opacity: 0;
+}
+
+/*why content*/
+.why-content {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+.why-gallery {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: calc(42.85714% - 2.14286rem);
+  padding: 0 0 50%;
+  margin: 0 auto;
+}
+.why-gallery .fig-image {
+  overflow: hidden;
+  position: relative;
+  height: 500px;
+  max-height: 600px;
+}
+
+.why-copy {
+  width: calc(28.57143% - 2.67857rem);
+  padding: 8.75rem 0 0;
+  margin: 0 0 1.875rem;
+}
+.why-copy p, .why-copy h4 {
+  color: #fff;
+}
+.why-copy h4 {
+  font-size: 2rem;
+  line-height: 1.2;
+  font-weight: 400;
+}
+.why-copy p {
+  font-family: "Lato";
+  line-height: 1.2;
+  font-size: 1.3rem;
+}
+
+.why-list {
+  width: calc(28.57143% - 2.67857rem);
+  min-width: 18.75rem;
+  margin: 0;
+  padding: 10.625rem 0 0;
+}
+.why-list p, .why-list h4 {
+  color: #fff;
+}
+.why-list h4 {
+  font-size: 2rem;
+  line-height: 1.2;
+  font-weight: 400;
+}
+.why-list p {
+  font-family: "Lato";
+  line-height: 1.2;
+  font-size: 1.3rem;
+}
+.why-list li {
+  flex-direction: column;
+  margin: 0 0 4.6875rem;
+  display: flex;
+}
+.why-list li:nth-child(2) {
+  transform: translateX(20px);
+}
+.why-list li:nth-child(3) {
+  transform: translateX(40px);
+}
+.why-list .icon {
+  width: 100%;
+  margin: 0 0 1.5625rem;
+  text-align: center;
+  color: #fff;
+}
+.why-list .why-li-text {
+  margin: 0;
+  width: 100%;
+  padding: 0 2.5rem;
+}
+
+.third-section {
+  padding-bottom: 12rem;
+}
+
+/*flexbox testing*/
+.flexbox-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 6rem;
+}
+
+.flexbox-item {
+  width: 400px;
+  margin: 5px;
+  padding: 0.5rem;
+  min-height: 600px;
+  text-align: left;
+  position: relative;
+}
+.flexbox-item .flex-text-content {
+  z-index: 2;
+  position: absolute;
+  bottom: 0;
+  height: 30%;
+  left: 20px;
+  width: 80%;
+  padding: 1rem;
+}
+.flexbox-item h4 {
+  font-size: 2rem;
+}
+.flexbox-item .flex-img {
+  overflow: hidden;
+  position: relative;
+  height: 500px;
+  max-height: 500px;
+}
+.flexbox-item img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  object-fit: cover;
+  aspect-ratio: 1/2;
+}
